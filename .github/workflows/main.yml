@@ -89,7 +89,7 @@ jobs:
         tags: roma1va/taski_backend:latest
 
   frontend_tests:
-    runs-on: ubuntu-late      
+    runs-on: ubuntu-late
     steps:
     - uses: actions/checkout@v3
     - name: Set up nodeJS
@@ -97,12 +97,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         # Это параметр воркфлоу, указывающий нужную версию Node.js
-        node-version:       
+        node-version: 18
     - name: Install dependencies
       # Эта команда устанавливает зависимости для фронтенда
       run: |
         cd frontend/
-        npm       
+        npm ci
     - name: Test frontend
       # Запускаем тесты
       run: |
